@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <title>COVID-19 Probability Detector</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">COVID-19 Detector</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center"> COVID-19 Probability Detector </h2>
+            </div>
+        </div>
+        <form action="/" method="POST">
+
+
+            <div class="row mb-3">
+                <label for="fever" class="col-sm-2 col-form-label">Enter Fever Value</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="fever" id="fever" placeholder="Enter your body temperature">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="age" class="col-sm-2 col-form-label">Enter your Age</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Age" id="inputPassword3" name="Age" placeholder="How ,much old you are!">
+                </div>
+            </div>
+            <fieldset>
+                <div class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Body Pain</legend>
+
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="BodyPain1" id="BodyPain1" value="option1" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                     No Pain
+                    </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="BodyPain1" id="BodyPain1" value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+             Medium Pain
+                    </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="BodyPain1" id="BodyPain1" value="option3">
+                            <label class="form-check-label" for="gridRadios3">
+                   Extreme pain
+                    </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Runny Nose</legend>
+
+                <div class="col-sm-4">
+
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="runnynose" id="runnynose" value="Yes" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                     Yes
+                    </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="runnynose" id="runnynose" value="No">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                No
+                </label>
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+            <fieldset>
+                <div class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Difficulty in Breathing</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="diffbreath" id="diffbreath" value="option1" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                    Low
+                    </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="diffbreath" id="diffbreath" value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+             Medium
+                    </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="diffbreath" id="diffbreath" value="option3">
+                            <label class="form-check-label" for="gridRadios3">
+                   Extreme
+                    </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="text-center">
+                <button class="btn btn-success text-center " style="margin:auto;">Check For Infection</button>
+            </div>
+        </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+
+</html>
