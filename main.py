@@ -49,3 +49,4 @@ def hello_world():
 if __name__ == "__main__":
          app.run(debug=True)
          hello_world()        #This method call is necessary for the server to start up. So don't forget to keep it.
+         
