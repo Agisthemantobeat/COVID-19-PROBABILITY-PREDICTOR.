@@ -18,6 +18,13 @@ def hello_world():
         Cough=mydict['cough1']
         diffBreath=mydict['diffbreath']
         sorethroat=mydict['sorethroat']
+        test=mydict['test']
+        if test=='option1':
+            t=0.5
+        elif test=='option2':
+            t=1
+        else:
+            t=0
         if Headache=="option1":
             k=1
      
@@ -44,14 +51,14 @@ def hello_world():
         else:
                 s=0
         
-        inputfeatures= [f,k,s,a,l,m]
-        print([f,k,s,a,l,m])
+        inputfeatures= [f,k,s,a,l,m,t]
+        print([f,k,s,a,l,m,t])
         infProb= dictname.predict_proba([inputfeatures])[0][1]
         print(infProb)
         if infProb>0.01:
-            infProb=0.01
+            infProb=0.009
         print(infProb)
-        return render_template('show.html',inf= round(infProb*1000))
+        return render_template('show.html',inf= round(infProb*1000,2))
     return render_template('index.html')
     
 
