@@ -12,35 +12,46 @@ def hello_world():
     global k,l,m
     if request.method=='POST':
         mydict=request.form
-        fever=int(mydict['fever'])
+        fever=float(mydict['fever'])
         Age=int(mydict['Age'])
-        BodyPain=mydict['BodyPain1']
-        runnynose1=mydict['runnynose']
-        print(runnynose1)
+        Headache=mydict['headache']
+        Cough=mydict['cough1']
         diffBreath=mydict['diffbreath']
-        if BodyPain=="option1":
-            k=-1
-        elif BodyPain=="option2":
-            k=0
-        else:
+        sorethroat=mydict['sorethroat']
+        if Headache=="option1":
             k=1
-        if runnynose1=="Yes":
+     
+        else:
+             k=0
+        if fever>100.4:
+            f=1
+        else:
+            f=0
+        if Cough=="Yes":
             l=1
-        elif runnynose1=="No":
+        elif Cough=="No":
             l=0
         if  diffBreath=="option1":
-            m=-1
-        elif diffBreath=="option2":
-            m=0
+            m=1  
         else:
-            m=1 
+            m=0 
+        if Age>=60:
+            a=1
+        else:
+            a=0
+        if sorethroat=='option1':
+                s=1
+        else:
+                s=0
         
-        inputfeatures= [fever,k,Age,l,m]
-        print([fever,k,Age,l,m])
+        inputfeatures= [f,k,s,a,l,m]
+        print([f,k,s,a,l,m])
         infProb= dictname.predict_proba([inputfeatures])[0][1]
-    #return 'Hello, World!'+' '+str(infProb)
         print(infProb)
-        return render_template('show.html',inf= round(infProb*100))
+        if infProb>0.01:
+            infProb=0.01
+        print(infProb)
+        return render_template('show.html',inf= round(infProb*1000))
     return render_template('index.html')
     
 
