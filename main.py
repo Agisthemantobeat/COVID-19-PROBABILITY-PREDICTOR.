@@ -18,7 +18,13 @@ def hello_world():
         Cough=mydict['cough1']
         diffBreath=mydict['diffbreath']
         sorethroat=mydict['sorethroat']
+        gender=mydict['gender']
         test=mydict['test']
+        if gender=='option1':
+            g=1
+        elif gender=='option2':
+            g=0
+     
         if test=='option1':
             t=0.5
         elif test=='option2':
@@ -51,19 +57,33 @@ def hello_world():
         else:
                 s=0
         
-        inputfeatures= [f,k,s,a,l,m,t]
-        print([f,k,s,a,l,m,t])
+        inputfeatures= [f,k,s,a,l,m,t,g]
+        print([f,k,s,a,l,m,t,g])
         infProb= dictname.predict_proba([inputfeatures])[0][1]
         print(infProb)
-        if infProb>0.01:
-            infProb=0.009
-        print(infProb)
-        return render_template('show.html',inf= round(infProb*1000,2))
+        if t==1:
+            infProb=infProb*10
+        if infProb <0.001:
+            infProb= 2*round(infProb*10000,2)
+            print(infProb)
+        elif infProb<0.01:
+            infProb= round(infProb*100,2)
+            print(infProb)
+        else:
+            infProb= round(infProb*100,2)
+            print(infProb)
+        if infProb >0.80:
+            s=10
+        else:
+             s=1
+        print(s)
+                    
+        return render_template('show.html',inf= infProb,s=s)
     return render_template('index.html')
     
-
-
-
+    
+    
+    
 if __name__ == "__main__":
          app.run(debug=True)
          hello_world()        #This method call is necessary for the server to start up. So don't forget to keep it.
