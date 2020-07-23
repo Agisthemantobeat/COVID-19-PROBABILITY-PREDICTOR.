@@ -10,13 +10,17 @@ sklearn is a Python library for dealing with Logistic Regression.
 
 
 ```bash
-pip install sklearn
+pip install sklearn numpy pandas 
 ```
 
 ## Usage
 
 ```python
-import sklearn
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+from sklearn import preprocessing
+import pickle
 
 
 ## Contributing
